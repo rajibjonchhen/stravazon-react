@@ -16,9 +16,11 @@ function App() {
         <Route path='/' element ={ <MyLayout>
           <Home/>
         </MyLayout>}/>
-        <Route path='/detailProduct/:id' element ={ <MyLayout>
+        <Route path='/detailProduct/:id/' element ={ 
+        // <MyLayout>
           <DetailPage/>
-        </MyLayout>}/>
+        // </MyLayout>
+      }/>
         <Route/>
       </Routes>
       </BrowserRouter>
