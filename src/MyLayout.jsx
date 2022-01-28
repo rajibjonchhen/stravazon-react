@@ -1,12 +1,15 @@
 import React from "react";
 import MyNavbar from "./components/MyNavbar"
 import MyFooter from "./components/Myfooter"
+import { propTypes } from "react-bootstrap/esm/Image";
 
-const MyLayout = () => {
+const MyLayout = ({props}) => {
 
-    return(
+    return(<>
         <MyNavbar/>
-    )
+            {props.children}
+        <MyFooter/>
+    </>)
 }
 
 export default MyLayout
