@@ -10,6 +10,7 @@ const DetailPage = () => {
 
     const [productId, setProductId] = useState()
     const [product, setProduct] = useState()
+    const [reviews, setReviews] = useState()
     const params = useParams()
     useEffect(()=> {
         let id = params.id
@@ -31,7 +32,22 @@ const DetailPage = () => {
         }
     }
 
+    const fetchReview = async() => {
+        try {
+            let response = await fetch(`http://localhost:3000/products/${productId}/reviews` ,{
+                method:'GET'
+            })
+            if(response.ok){
+                let data = await response.json()
+                setReviews(data)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(<>
+       <div>
        <div>
            <div>
                <img src={product.imageUrl} alt={product.name}/>
@@ -43,6 +59,7 @@ const DetailPage = () => {
               
            </div>
            
+       </div>
        </div>
     </>
     )
