@@ -31,7 +31,7 @@ const DetailPage = () => {
         }
     }
 
-    return(
+    return(<>
        <div>
            <div>
                <img src={product.imageUrl} alt={product.name}/>
@@ -44,6 +44,7 @@ const DetailPage = () => {
            </div>
            
        </div>
+    </>
     )
 }
 
