@@ -47,7 +47,7 @@ const DetailPage = () => {
     }
 
     return(<>
-       <div>
+  {product &&   <div>
        <div>
            <div>
                <img src={product.imageUrl} alt={product.name}/>
@@ -56,11 +56,18 @@ const DetailPage = () => {
                <p>{product.name}</p>
                <p>{product.price}</p>
                <p>{product.description}</p>
+               <button>Show reviews</button>
               
            </div>
            
        </div>
-       </div>
+        <div>
+            <ul>
+
+            {reviews && reviews.map(review => {<li>{review.comment} - {review.rate}</li>})}
+            </ul>
+        </div>
+       </div>}
     </>
     )
 }

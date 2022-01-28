@@ -27,7 +27,7 @@ useEffect(()=>{
     return(<Container>
             <Row>
 
-        {products && products.map(product=> {<MyProductCard product={product}/>})}
+        {products && products.map(product=> {<MyProductCard key= {product._id} product={product}/>})}
        
     </Row>
     </Container>

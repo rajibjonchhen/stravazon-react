@@ -3,11 +3,11 @@ import MyNavbar from "./components/MyNavbar"
 import MyFooter from "./components/Myfooter"
 import { propTypes } from "react-bootstrap/esm/Image";
 
-const MyLayout = ({props}) => {
+const MyLayout = ({children}) => {
 
     return(<>
         <MyNavbar/>
-            {props.children}
+            {children}
         <MyFooter/>
     </>)
 }

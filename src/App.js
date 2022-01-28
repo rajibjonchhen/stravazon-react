@@ -1,9 +1,10 @@
-import React from 'React';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import MyLayout from "./MyLayout.jsx"
 import Home from "./components/home/Home.jsx"
 import DetailPage from './components/DetailPage.jsx';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
         <Route path='/' element ={ <MyLayout>
           <Home/>
         </MyLayout>}/>
-        <Route path='/' element ={ <MyLayout>
+        <Route path='/detailProduct/:id' element ={ <MyLayout>
           <DetailPage/>
         </MyLayout>}/>
         <Route/>
