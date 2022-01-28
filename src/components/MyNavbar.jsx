@@ -22,15 +22,15 @@ const MyNavbar = () => {
             </li>
            
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <select className="custom-select" id="selectFilter">
-                <option selected>Name</option>
+          {/* <form className="form-inline my-2 my-lg-0">
+            <select defaultValue="1" className="custom-select" id="selectFilter">
+                <option value="1" >Name</option>
                 <option value="2">Brand</option>
                 <option value="3">Price</option>
               </select>
-                <input id="search" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="searchWith(event)"/>
+                <input id="search" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onKeyUp="searchWith(event)"/>
             
-          </form>
+          </form> */}
         </div>
       </nav>
     )

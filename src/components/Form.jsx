@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+
+import ProductCard from "./home/ProductCard";
 
 
 
 const Form = () => {
+useState[product,setProduct] = useState({})
+useEffect(()=>{
 
+},[])
     return(
         <div>
             <form onsubmit="" className="mt-5 bg-secondary  p-5 rounded-lg text-white">
