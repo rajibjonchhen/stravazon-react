@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import MyProductCard from "./ProductCard";
 
 const Home = () => {
@@ -11,12 +12,13 @@ const Home = () => {
   }, []);
   const fetchProducts = async () => {
     try {
-      let response = await fetch("http://localhost:3001/products", {
+      let response = await fetch("https://marketplace-m6d5.herokuapp.com/products", {
         method: "GET",
       });
       if (response.ok) {
         let data = await response.json();
         setProducts(data);
+        console.log(data)
       }
     } catch (error) {
       console.log(error);
@@ -28,7 +30,9 @@ const Home = () => {
       <Row>
         {products &&
           products.map((product) => 
-             <MyProductCard key={product._id} product={product} />
+          <Link key={product._id} to={`/DetailPage/${product._id}`}>
+             <MyProductCard  product={product} />
+          </Link>
           )}
       </Row>
     </Container>

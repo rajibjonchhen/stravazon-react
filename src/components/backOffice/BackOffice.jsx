@@ -1,29 +1,45 @@
 import React, {useState, useEffect} from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
-import ProductCard from "./home/ProductCard";
 
 
 
-const Form = () => {
-useState[product,setProduct] = useState({})
+const BackOffice = () => {
+
+const[product,setProduct] = useState({})
+const [newProduct, setNewProduct] = useState({})
+const params = useParams
+
 useEffect(()=>{
-
+const productId = params.productId
 },[])
+
+
     return(
-        <div>
+        <Container>
+        <Row >
+        <Col sm={12} md={8} lg={6} className="m-auto">
             <form onsubmit="" className="mt-5 bg-secondary  p-5 rounded-lg text-white">
+            <div className="form-row">
+                    <div className="form-group col">
+                      <label for="name">Category *</label>
+                      <select id="category" name="Choose category" value={newProduct.category} onChange={(e) => setNewProduct.category(e.target.value)}size="1" className="ml-2 p-2 rounded-lg">
+                        <option value="smart phone" onSelect={() => setNewProduct.category("smart phone")}>Smart Phone</option>
+                        <option value="camera">Camera</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="tablet">Tablet</option>
+                        <option value="drone">Drone</option>
+                      </select>
+                    </div>
+                  </div>
                   <div className="form-row">
                     <div className="form-group col">
                       <label for="name">Product Name *</label>
                       <input type="name" className="form-control" id="name" required/>
                     </div>
                   </div>
-                  <div className="form-row">
-                    <div className="form-group col">
-                      <label for="description">Description *</label>
-                      <textarea type="text" className="form-control" id="description" row="4" required/>
-                    </div>
-                    </div>
+                 
                 
                     <div className="form-row">
                   <div className="form-group col">
@@ -44,6 +60,12 @@ useEffect(()=>{
                           <input type="number" className="form-control" id="price" required/>
                         </div>
                       </div>
+                      <div className="form-row">
+                    <div className="form-group col">
+                      <label for="description">Description *</label>
+                      <textarea type="text" className="form-control" id="description" row="4" required/>
+                    </div>
+                    </div>
                         <div className="m-2 d-flex">
                           <button type="button" className="btn btn-primary mr-2" onclick="handlePostSubmit(event)">Submit</button>
                           <button type="Reset" className="btn btn-warning mr-2">Reset</button>
@@ -54,8 +76,10 @@ useEffect(()=>{
                         </svg></span></button>
                         </div>
                 </form>
-        </div>
+        </Col>
+        </Row>
+        </Container>
     )
 }
 
-export default Form
+export default BackOffice
